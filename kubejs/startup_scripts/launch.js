@@ -4,23 +4,23 @@ onEvent('item.registry', event => {
 
 	let types = ['Nether', 'Certus', 'Fluix']
 	types.forEach(e => {
-		let id = e.toLowerCase()
-		event.create('growing_' + id + '_seed').type('create:sequenced_assembly').texture("appliedenergistics2:item/crystal_seed_" + id).displayName(e + ' Quartz Seed')
-		event.create('tiny_' + id + '_crystal').texture("appliedenergistics2:item/crystal_seed_" + id + "2").displayName('Tiny ' + e + ' Quartz Crystal')
-		event.create('growing_tiny_' + id + '_crystal').type('create:sequenced_assembly').texture("appliedenergistics2:item/crystal_seed_" + id + "2").displayName('Tiny ' + e + ' Quartz Crystal')
-		event.create('small_' + id + '_crystal').texture("appliedenergistics2:item/crystal_seed_" + id + "3").displayName('Small ' + e + ' Quartz Crystal')
-		event.create('growing_small_' + id + '_crystal').type('create:sequenced_assembly').texture("appliedenergistics2:item/crystal_seed_" + id + "3").displayName('Small ' + e + ' Quartz Crystal')
+		let karl = e.toLowerCase() //karl = id but karl can not = id
+		event.create(id = 'growing_' + karl + '_seed', type = 'create:sequenced_assembly').texture("appliedenergistics2:item/crystal_seed_" + karl).displayName(e + ' Quartz Seed')
+		event.create('tiny_' + karl + '_crystal').texture("appliedenergistics2:item/crystal_seed_" + karl + "2").displayName('Tiny ' + e + ' Quartz Crystal')
+		event.create(id = 'growing_tiny_' + karl + '_crystal', type = 'create:sequenced_assembly').texture("appliedenergistics2:item/crystal_seed_" + karl + "2").displayName('Tiny ' + e + ' Quartz Crystal')
+		event.create('small_' + karl + '_crystal').texture("appliedenergistics2:item/crystal_seed_" + karl + "3").displayName('Small ' + e + ' Quartz Crystal')
+		event.create(id = 'growing_small_' + karl + '_crystal', type = 'create:sequenced_assembly').texture("appliedenergistics2:item/crystal_seed_" + karl + "3").displayName('Small ' + e + ' Quartz Crystal')
 	});
 
 	let processors = ["Calculation", "Logic", "Engineering"]
 	processors.forEach(name => {
 		let e = name.toLowerCase()
-		event.create('incomplete_' + e + '_processor').type('create:sequenced_assembly').texture('kubejs:item/incomplete_' + e + '_processor').displayName('Incomplete ' + name + ' Processor')
+		event.create(id = 'incomplete_' + e + '_processor', type = 'create:sequenced_assembly').texture('kubejs:item/incomplete_' + e + '_processor').displayName('Incomplete ' + name + ' Processor')
 	})
 
 	let number = (name) => {
-		let id = name.toLowerCase()
-		event.create(id).texture("kubejs:item/" + id).glow(true).displayName(name)
+		let karl = name.toLowerCase()
+		event.create(karl).texture("kubejs:item/" + karl).glow(true).displayName(name)
 	}
 
 	number('Zero')
@@ -39,9 +39,9 @@ onEvent('item.registry', event => {
 	number('Divide')
 
 	let mechanism = (name, rarity) => {
-		let id = name.toLowerCase()
-		event.create(id + '_mechanism').texture("kubejs:item/" + id + "_mechanism").displayName(name + ' Mechanism').rarity(rarity ? rarity : RARITY_COMMON)
-		event.create('incomplete_' + id + '_mechanism').texture("kubejs:item/incomplete_" + id + "_mechanism").type('create:sequenced_assembly').displayName('Incomplete ' + name + ' Mechanism')
+		let karl = name.toLowerCase()
+		event.create(karl + '_mechanism').texture("kubejs:item/" + karl + "_mechanism").displayName(name + ' Mechanism').rarity(rarity ? rarity : RARITY_COMMON)
+		event.create(id = 'incomplete_' + karl + '_mechanism', type = 'create:sequenced_assembly').texture("kubejs:item/incomplete_" + karl + "_mechanism").displayName('Incomplete ' + name + ' Mechanism')
 	}
 
 	event.create('radiant_coil').glow(true).texture("kubejs:item/radiant_coil").displayName('Radiant Induction Coil')
@@ -59,12 +59,12 @@ onEvent('item.registry', event => {
 
 	for (i = 0; i < slime_types.length; i++) {
 		let name = slime_types[i]
-		let id = name.toLowerCase()
-		event.create(`${id}_slimy_fern_leaf`)
+		let karl = name.toLowerCase()
+		event.create(`${karl}_slimy_fern_leaf`)
 			.color(0, slime_colours[i])
 			.texture("kubejs:item/slimy_fern_leaf")
 			.displayName(`Slimy Fern Leaf`)
-		event.create(`${id}_slime_fern_paste`)
+		event.create(`${karl}_slime_fern_paste`)
 			.color(0, slime_colours[i])
 			.texture("kubejs:item/ground_slimy_fern")
 			.displayName(`Slimy Fern Blend`)
@@ -87,12 +87,12 @@ onEvent('item.registry', event => {
 	event.create('purified_sand').texture("kubejs:item/purified_sand").displayName('Purified Sand')
 	event.create('silicon_compound').texture("kubejs:item/silicon_compound").displayName('Silicon Compound')
 	event.create('smoke_mote').texture("kubejs:item/smoke_mote").displayName('Tiny Smoke Cloud')
-	event.create('incomplete_coke_chunk').texture("kubejs:item/incomplete_coke_chunk").type('create:sequenced_assembly').displayName('Cut Coke')
+	event.create(id = 'incomplete_coke_chunk', type = 'create:sequenced_assembly').texture("kubejs:item/incomplete_coke_chunk").displayName('Cut Coke')
 	event.create('coke_chunk').texture("kubejs:item/coke_chunk").displayName('Coke Chunks')
 
 	event.create('matter_plastics').texture("kubejs:item/matter_plastics").displayName('Matter Plastics')
 	event.create('nickel_compound').texture("kubejs:item/nickel_compound").displayName('Nickel Compound')
-	event.create('invar_compound').texture("kubejs:item/invar_compound").type('create:sequenced_assembly').displayName('Unprocessed Invar Ingot')
+	event.create(id = 'invar_compound', type = 'create:sequenced_assembly').texture("kubejs:item/invar_compound").displayName('Unprocessed Invar Ingot')
 	event.create('dye_entangled_singularity').texture("kubejs:item/dye_entangled_singularity").unstackable().displayName('Chromatic Singularity')
 	event.create('chromatic_resonator').texture("kubejs:item/chromatic_resonator").displayName('Chromatic Resonator').maxDamage(512)
 	event.create('flash_drive').texture("kubejs:item/boot_medium").displayName('Flash Drive').maxDamage(512)
@@ -118,9 +118,9 @@ onEvent('block.registry', event => {
 	event.create('ponder_laser_lamp_on').model('kubejs:block/ponder_laser_lamp_on').notSolid().lightLevel(15).renderType("translucent").displayName('Laser Lamp (For Ponder)')
 
 	let machine = (name, layer) => {
-		let id = name.toLowerCase()
-		event.create(id + '_machine')
-			.model('kubejs:block/' + id + '_machine')
+		let karl = name.toLowerCase()
+		event.create(karl + '_machine')
+			.model('kubejs:block/' + karl + '_machine')
 			.material('lantern')
 			.hardness(3.0)
 			.displayName(name + ' Machine')
@@ -290,13 +290,25 @@ onEvent('block.registry', event => {
 
 onEvent('fluid.registry', event => {
 	let colors = [0xCBE827, 0xAEE827, 0x68E827, 0x27E86E, 0x27E8B1, 0x27DEE8, 0x27B5E8, 0x2798E8, 0x2778E8, 0x2748E8]
-	event.create('raw_logic').displayName(`Liquified Logic (Unprocessed)`).textureStill('kubejs:fluid/number_still').textureFlowing('kubejs:fluid/number_flow').color(0xE7FFCB)
+	event.create('raw_logic')
+		.displayName(`Liquified Logic (Unprocessed)`)
+		.stillTexture('kubejs:fluid/number_still')
+		.flowingTexture('kubejs:fluid/number_flow')
+		.color(0xE7FFCB)
 	for (i = 0; i < 10; i++)
-		event.create('number_' + i).displayName(`Liquified Logic (${i})`).textureStill('kubejs:fluid/number_still').textureFlowing('kubejs:fluid/number_flow').color(colors[i])
-	event.create('matrix').displayName(`Liquified Computation Matrix`).textureStill('kubejs:fluid/matrix_still').textureFlowing('kubejs:fluid/matrix_flow').bucketColor(colors[0])
-	event.create('fine_sand').displayName(`Fine Sand`).textureStill('kubejs:fluid/fine_sand_still').textureFlowing('kubejs:fluid/fine_sand_flow').bucketColor(0xE3DBB0)
-	event.create('crude_oil').displayName(`Crude Oil`).textureStill('thermal:block/fluids/crude_oil_still').textureFlowing('thermal:block/fluids/crude_oil_flow').bucketColor(0x222118)
-	event.create('liquid_smoke').displayName(`Liquid Smoke`).textureStill('advancedrocketry:blocks/fluid/oxygen_still').textureFlowing('advancedrocketry:blocks/fluid/oxygen_flow').bucketColor(0xEBEBEB)
+		event.create('number_' + i)
+			.displayName(`Liquified Logic (${i})`)
+			.stillTexture('kubejs:fluid/number_still')
+			.flowingTexture('kubejs:fluid/number_flow')
+			.color(colors[i])
+	event.create('matrix')
+		.displayName(`Liquified Computation Matrix`)
+		.stillTexture('kubejs:fluid/matrix_still')
+		.flowingTexture('kubejs:fluid/matrix_flow')
+		.bucketColor(colors[0])
+	event.create('fine_sand').displayName(`Fine Sand`).stillTexture('kubejs:fluid/fine_sand_still').flowingTexture('kubejs:fluid/fine_sand_flow').bucketColor(0xE3DBB0)
+	event.create('crude_oil').displayName(`Crude Oil`).stillTexture('thermal:block/fluids/crude_oil_still').flowingTexture('thermal:block/fluids/crude_oil_flow').bucketColor(0x222118)
+	event.create('liquid_smoke').displayName(`Liquid Smoke`).stillTexture('advancedrocketry:blocks/fluid/oxygen_still').flowingTexture('advancedrocketry:blocks/fluid/oxygen_flow').bucketColor(0xEBEBEB)
 })
 
 onEvent('item.modification', event => {

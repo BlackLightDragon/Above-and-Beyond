@@ -331,9 +331,9 @@ let cobble = (id, cobbleId) => ({
 onEvent('block.loot_tables', event => {
 
     // Vanilla stone variants drop as cobble
-    event.addJson(MC('andesite'), cobble(MC('andesite'), CR('andesite_cobblestone')))
-    event.addJson(MC('diorite'), cobble(MC('diorite'), CR('diorite_cobblestone')))
-    event.addJson(MC('granite'), cobble(MC('granite'), CR('granite_cobblestone')))
+    //event.addJson(MC('andesite'), cobble(MC('andesite'), CR('andesite_cobblestone')))
+    //event.addJson(MC('diorite'), cobble(MC('diorite'), CR('diorite_cobblestone')))
+    //event.addJson(MC('granite'), cobble(MC('granite'), CR('granite_cobblestone')))
     event.addSimpleBlock('chisel:basalt/raw', 'extcaves:lavastone')
 
     event.addSimpleBlock('minecraft:twisting_vines', 'minecraft:twisting_vines')

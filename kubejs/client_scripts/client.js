@@ -5,11 +5,11 @@ onEvent('jei.hide.items', event => {
 	event.hide(`#buddycards:cards`)
 	event.hide(`#buddycards:gummy_cards`)
 })
-
+/*
 onEvent('jei.subtypes', event => {
 	event.useNBT('advancedrocketry:planet_id_chip')
 })
-
+*/
 onEvent('jei.hide.fluids', event => {
 })
 
@@ -148,7 +148,7 @@ onEvent('jei.information', event => {
 	event.add('kubejs:substrate_crystal', catalyst("Crystalline"))
 	event.add('kubejs:substrate_metal', catalyst("Metallurgic"))
 	event.add('kubejs:substrate_gem', catalyst("Gemstone"))
-
+/*
 	let beer = (id, igs) =>
 		event.add('drinkbeer:beer_mug' + id, ["Place 4 Empty Beer Mugs, " + igs + " in a Keg to create this Beverage."])
 
@@ -159,7 +159,7 @@ onEvent('jei.information', event => {
 	beer("_sweet_berry_kriek", "2 Wheat, 1 Sweet Berry and a Water Bucket")
 	beer("_haars_icey_pale_lager", "3 Wheat and a block of Blue Ice")
 	beer("_pumpkin_kvass", "2 Bread, a Pumpkin and a Water Bucket")
-
+*/
 	event.add('kubejs:substrate_chaos', catalyst("Catalyst", "Chaos Catalyst").concat([
 		" ", "§8Usage:§0", "Running the §9Chaos Catalyst§0 with any amount of one §9Reagent§0 through an §5Alchemical Laser§0 will §9transmute§0 the Reagent to another. The Transmutation Pairings are §9unique to each World§0."
 	]))

@@ -47,6 +47,7 @@ onEvent('entity.spawned', event => {
 	entity.setZ(Math.floor(entity.getZ()) + .5)
 })
 
+/*
 onEvent('server.datapack.first', event => {
 
 	// "Fixes" Extended Caves wiping its config contents
@@ -66,6 +67,7 @@ onEvent('server.datapack.first', event => {
 	extcaves_conf.gen_rock_flints = no_thankyou
 
 })
+*/
 
 onEvent('player.tick', event => {
 
